@@ -24,9 +24,15 @@
     <ClCompile Include="scanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="y.tab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -34,5 +40,8 @@
     <Flex Include="scanner.l">
       <Filter>Source Files</Filter>
     </Flex>
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="parser.y" />
   </ItemGroup>
 </Project>

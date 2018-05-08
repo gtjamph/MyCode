@@ -1,7 +1,9 @@
 %{ 
 
-#include "y.tab.h"
+#include "parser.h"
 #include <stdio.h> 
+
+int lines = 0;
 
 %} 
  
@@ -16,7 +18,7 @@ int                         { return INT; }
 bool                        { return BOOL; }
 
 {letter}({letter}|{digit})*	{ yylval.name = _strdup(yytext); return IDENT; } 
- {digit}+                   { yylval.num = atoi(yytext); return NUMBER; }
+{digit}+					{ yylval.num = atoi(yytext); return NUMBER; }
  
 "="                         { return '='; } 
 "+"                         { return '+'; } 
@@ -27,7 +29,8 @@ bool                        { return BOOL; }
 "}"                         { return '}'; } 
 ";"                         { return ';'; } 
  
-[ \r\n\t]                   /* skip whitespace */ 
+[\n]						{ lines++;    }
+[ \t\r]						/* ignore whitespace */
  
 .                           {                                  
 								fprintf(stderr, "invalid character '%c'\n", *yytext);                                 
@@ -39,4 +42,9 @@ bool                        { return BOOL; }
 int yywrap() 
 {     
 	return 1; 
+}
+
+void yyerror(const char* message)
+{
+    fprintf(stderr, "Error: line %d, %s\n", lines, message);
 }

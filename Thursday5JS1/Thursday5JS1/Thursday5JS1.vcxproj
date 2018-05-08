@@ -122,15 +122,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="parser.cpp" />
     <ClCompile Include="scanner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="parser.h" />
     <ClInclude Include="y.tab.h" />
   </ItemGroup>
   <ItemGroup>
     <Flex Include="scanner.l">
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).cpp</OutputFile>
     </Flex>
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="parser.y">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).cpp</OutputFile>
+      <DefinesFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).h</DefinesFile>
+    </Bison>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
