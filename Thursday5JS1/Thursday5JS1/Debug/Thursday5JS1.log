@@ -1,9 +1,29 @@
 ﻿  Process "parser.y" bison file
   Process "scanner.l" flex file
   scanner.cpp
-  parser.cpp
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1070): warning C4065: switch statement contains 'default' but no 'case' labels
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1357): warning C4065: switch statement contains 'default' but no 'case' labels
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2143: syntax error: missing ';' before '<'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2238: unexpected token(s) preceding ';'
   main.cpp
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2143: syntax error: missing ';' before '*'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2238: unexpected token(s) preceding ';'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2143: syntax error: missing ';' before '<'
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2238: unexpected token(s) preceding ';'
   Generating Code...
-  Thursday5JS1.vcxproj -> C:\Users\n1408364\source\repos\MyCode\Thursday5JS1\Debug\Thursday5JS1.exe

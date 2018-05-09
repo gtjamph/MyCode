@@ -51,7 +51,9 @@ extern int yydebug;
      IF = 260,
      ELSE = 261,
      INT = 262,
-     BOOL = 263
+     BOOL = 263,
+     ASSIGNMENT = 264,
+     SEMICOLON = 265
    };
 #endif
 
@@ -60,14 +62,19 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
-#line 7 "parser.y"
+#line 13 "parser.y"
 
+    ScriptBody* scriptBody;
+    Expression* expr;
+    Statement* stmt;
+    vector<Statement*>* stmts;
     int num;
     char* name;
+	const char* charArray;
 
 
 /* Line 2058 of yacc.c  */
-#line 71 "parser.h"
+#line 78 "parser.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

@@ -24,15 +24,21 @@
     <ClCompile Include="scanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="y.tab.h">
+    <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="parser.h">
+    <ClInclude Include="Type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Statement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scriptbody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -43,5 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Bison Include="parser.y" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test1.j">
+      <Filter>Tests</Filter>
+    </None>
+    <None Include="test2.j">
+      <Filter>Tests</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -122,12 +122,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="parser.cpp" />
     <ClCompile Include="scanner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="parser.h" />
-    <ClInclude Include="y.tab.h" />
+    <ClInclude Include="Expression.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Scriptbody.h" />
+    <ClInclude Include="Statement.h" />
+    <ClInclude Include="Type.h" />
   </ItemGroup>
   <ItemGroup>
     <Flex Include="scanner.l">
@@ -139,6 +141,10 @@
       <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).cpp</OutputFile>
       <DefinesFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).h</DefinesFile>
     </Bison>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test1.j" />
+    <None Include="test2.j" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
