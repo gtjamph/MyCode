@@ -38,7 +38,7 @@
     <ClInclude Include="Expression.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scriptbody.h">
+    <ClInclude Include="Script.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

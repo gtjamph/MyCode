@@ -68,7 +68,7 @@
 #include "Node.h"
 #include "Statement.h"
 #include "Expression.h"
-#include "ScriptBody.h"
+#include "Script.h"
 
     int yylex();
     void yyerror(const char*);
@@ -465,10 +465,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    46,    46,    49,    52,    53,    56,    60,    79,    80,
-      83,    90,    91,   101,   108,   115,   118,   119,   133,   136,
-     139,   144,   147,   150,   153,   156,   159,   162,   165,   168,
-     171,   174,   177,   180,   183,   186,   189
+       0,    45,    45,    48,    51,    52,    55,    59,    78,    79,
+      82,    89,    90,   100,   107,   114,   117,   118,   132,   135,
+     138,   143,   146,   149,   152,   155,   158,   161,   164,   167,
+     170,   173,   176,   179,   182,   185,   188
 };
 #endif
 
@@ -1621,5 +1621,5 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 192 "parser.y"
+#line 191 "parser.y"
 

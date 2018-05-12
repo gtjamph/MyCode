@@ -2,7 +2,7 @@
 #include "Node.h"
 #include "Statement.h"
 #include "Expression.h"
-#include "ScriptBody.h"
+#include "Script.h"
 
     int yylex();
     void yyerror(const char*);
@@ -25,7 +25,6 @@
 %token IF ELSE INT BOOL
 %token ASSIGNMENT
 %token SEMICOLON
-
 
 %type <scriptBody> ScriptBody
 %type <stmts> StatementList
