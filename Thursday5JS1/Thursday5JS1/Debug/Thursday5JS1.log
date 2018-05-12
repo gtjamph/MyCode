@@ -1,29 +1,26 @@
 ﻿  Process "parser.y" bison file
   Process "scanner.l" flex file
   scanner.cpp
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2143: syntax error: missing ';' before '<'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2238: unexpected token(s) preceding ';'
-  main.cpp
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(14): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(15): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2143: syntax error: missing ';' before '*'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(16): error C2238: unexpected token(s) preceding ';'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2143: syntax error: missing ';' before '<'
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(17): error C2238: unexpected token(s) preceding ';'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(48): warning C4005: 'INT8_MIN': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(59): note: see previous definition of 'INT8_MIN'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(49): warning C4005: 'INT16_MIN': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(62): note: see previous definition of 'INT16_MIN'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(50): warning C4005: 'INT32_MIN': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(65): note: see previous definition of 'INT32_MIN'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(52): warning C4005: 'INT8_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(68): note: see previous definition of 'INT8_MAX'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(53): warning C4005: 'INT16_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(71): note: see previous definition of 'INT16_MAX'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(54): warning C4005: 'INT32_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(74): note: see previous definition of 'INT32_MAX'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(56): warning C4005: 'UINT8_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(77): note: see previous definition of 'UINT8_MAX'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(57): warning C4005: 'UINT16_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(80): note: see previous definition of 'UINT16_MAX'
+c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\stdint.h(58): warning C4005: 'UINT32_MAX': macro redefinition
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(83): note: see previous definition of 'UINT32_MAX'
+  parser.cpp
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1108): warning C4065: switch statement contains 'default' but no 'case' labels
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1395): warning C4065: switch statement contains 'default' but no 'case' labels
   Generating Code...
+  Thursday5JS1.vcxproj -> C:\Users\n1408364\source\repos\MyCode\Thursday5JS1\Debug\Thursday5JS1.exe

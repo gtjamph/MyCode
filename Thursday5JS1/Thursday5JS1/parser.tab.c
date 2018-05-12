@@ -65,16 +65,10 @@
 /* Line 371 of yacc.c  */
 #line 1 "parser.y"
 
-#include <cstdarg>
-#include <cstdio>
-#include <string>
-#include <vector>
 #include "Node.h"
-#include "ScriptBody.h"
 #include "Statement.h"
 #include "Expression.h"
-
-	using namespace std;
+#include "Script.h"
 
     int yylex();
     void yyerror(const char*);
@@ -82,7 +76,7 @@
 	ScriptBody *root;
 
 /* Line 371 of yacc.c  */
-#line 86 "parser.tab.c"
+#line 80 "parser.tab.c"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -131,19 +125,19 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 387 of yacc.c  */
-#line 19 "parser.y"
+#line 13 "parser.y"
 
-    ScriptBody *scriptBody;
-    Expression *expr;
-    Statement *stmt;
-    vector<Statement*> *stmts;
+    ScriptBody* scriptBody;
+    Expression* expr;
+    Statement* stmt;
+    vector<Statement*>* stmts;
     int num;
     char* name;
 	const char* charArray;
 
 
 /* Line 387 of yacc.c  */
-#line 147 "parser.tab.c"
+#line 141 "parser.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -171,7 +165,7 @@ int yyparse ();
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 175 "parser.tab.c"
+#line 169 "parser.tab.c"
 
 #ifdef short
 # undef short
@@ -468,10 +462,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    52,    52,    55,    58,    59,    62,    66,    85,    86,
-      89,    96,    97,   107,   114,   121,   124,   125,   139,   142,
-     145,   150,   153,   156,   159,   162,   165,   168,   171,   174,
-     177,   180,   183,   186,   189,   192,   195
+       0,    45,    45,    48,    51,    52,    55,    59,    78,    79,
+      82,    89,    90,   100,   107,   114,   117,   118,   132,   135,
+     138,   143,   146,   149,   152,   155,   158,   161,   164,   167,
+     170,   173,   176,   179,   182,   185,   188
 };
 #endif
 
@@ -1392,7 +1386,7 @@ yyreduce:
     {
       
 /* Line 1792 of yacc.c  */
-#line 1396 "parser.tab.c"
+#line 1390 "parser.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1624,5 +1618,5 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 198 "parser.y"
+#line 191 "parser.y"
 

@@ -1,0 +1,536 @@
+Terminals unused in grammar
+
+   IF
+   ELSE
+   INT
+   BOOL
+   '='
+   '<'
+   '+'
+
+
+Grammar
+
+    0 $accept: Script $end
+
+    1 Script: ScriptBody
+
+    2 ScriptBody: StatementList
+
+    3 StatementList: StatementListItem
+    4              | StatementList StatementListItem
+
+    5 StatementListItem: Statement
+
+    6 Statement: ExpressionStatement
+
+    7 ExpressionStatement: Expression SEMICOLON
+    8                    | Expression
+
+    9 Expression: AssignmentExpression
+
+   10 AssignmentExpression: LeftHandSideExpression ASSIGNMENT AssignmentExpression
+   11                     | ConditionalExpression
+
+   12 LeftHandSideExpression: NewExpression
+
+   13 NewExpression: MemberExpression
+
+   14 MemberExpression: PrimaryExpression
+
+   15 PrimaryExpression: IdentifierReference
+   16                  | Literal
+
+   17 IdentifierReference: Identifier
+
+   18 Identifier: IdentifierName
+
+   19 IdentifierName: IDENT
+
+   20 ConditionalExpression: LogicalORExpression
+
+   21 LogicalORExpression: LogicalANDExpression
+
+   22 LogicalANDExpression: BitwiseORExpression
+
+   23 BitwiseORExpression: BitwiseXORExpression
+
+   24 BitwiseXORExpression: BitwiseANDExpression
+
+   25 BitwiseANDExpression: EqualityExpression
+
+   26 EqualityExpression: RelationalExpression
+
+   27 RelationalExpression: ShiftExpression
+
+   28 ShiftExpression: AdditiveExpression
+
+   29 AdditiveExpression: MultiplicativeExpression
+
+   30 MultiplicativeExpression: ExponentiationExpression
+
+   31 ExponentiationExpression: UnaryExpression
+
+   32 UnaryExpression: UpdateExpression
+
+   33 UpdateExpression: LeftHandSideExpression
+
+   34 Literal: NumericLiteral
+
+   35 NumericLiteral: NUMBER
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'+' (43)
+'<' (60)
+'=' (61)
+error (256)
+NUMBER (258) 35
+IDENT (259) 19
+IF (260)
+ELSE (261)
+INT (262)
+BOOL (263)
+ASSIGNMENT (264) 10
+SEMICOLON (265) 7
+
+
+Nonterminals, with rules where they appear
+
+$accept (14)
+    on left: 0
+Script (15)
+    on left: 1, on right: 0
+ScriptBody (16)
+    on left: 2, on right: 1
+StatementList (17)
+    on left: 3 4, on right: 2 4
+StatementListItem (18)
+    on left: 5, on right: 3 4
+Statement (19)
+    on left: 6, on right: 5
+ExpressionStatement (20)
+    on left: 7 8, on right: 6
+Expression (21)
+    on left: 9, on right: 7 8
+AssignmentExpression (22)
+    on left: 10 11, on right: 9 10
+LeftHandSideExpression (23)
+    on left: 12, on right: 10 33
+NewExpression (24)
+    on left: 13, on right: 12
+MemberExpression (25)
+    on left: 14, on right: 13
+PrimaryExpression (26)
+    on left: 15 16, on right: 14
+IdentifierReference (27)
+    on left: 17, on right: 15
+Identifier (28)
+    on left: 18, on right: 17
+IdentifierName (29)
+    on left: 19, on right: 18
+ConditionalExpression (30)
+    on left: 20, on right: 11
+LogicalORExpression (31)
+    on left: 21, on right: 20
+LogicalANDExpression (32)
+    on left: 22, on right: 21
+BitwiseORExpression (33)
+    on left: 23, on right: 22
+BitwiseXORExpression (34)
+    on left: 24, on right: 23
+BitwiseANDExpression (35)
+    on left: 25, on right: 24
+EqualityExpression (36)
+    on left: 26, on right: 25
+RelationalExpression (37)
+    on left: 27, on right: 26
+ShiftExpression (38)
+    on left: 28, on right: 27
+AdditiveExpression (39)
+    on left: 29, on right: 28
+MultiplicativeExpression (40)
+    on left: 30, on right: 29
+ExponentiationExpression (41)
+    on left: 31, on right: 30
+UnaryExpression (42)
+    on left: 32, on right: 31
+UpdateExpression (43)
+    on left: 33, on right: 32
+Literal (44)
+    on left: 34, on right: 16
+NumericLiteral (45)
+    on left: 35, on right: 34
+
+
+State 0
+
+    0 $accept: . Script $end
+
+    NUMBER  shift, and go to state 1
+    IDENT   shift, and go to state 2
+
+    Script                    go to state 3
+    ScriptBody                go to state 4
+    StatementList             go to state 5
+    StatementListItem         go to state 6
+    Statement                 go to state 7
+    ExpressionStatement       go to state 8
+    Expression                go to state 9
+    AssignmentExpression      go to state 10
+    LeftHandSideExpression    go to state 11
+    NewExpression             go to state 12
+    MemberExpression          go to state 13
+    PrimaryExpression         go to state 14
+    IdentifierReference       go to state 15
+    Identifier                go to state 16
+    IdentifierName            go to state 17
+    ConditionalExpression     go to state 18
+    LogicalORExpression       go to state 19
+    LogicalANDExpression      go to state 20
+    BitwiseORExpression       go to state 21
+    BitwiseXORExpression      go to state 22
+    BitwiseANDExpression      go to state 23
+    EqualityExpression        go to state 24
+    RelationalExpression      go to state 25
+    ShiftExpression           go to state 26
+    AdditiveExpression        go to state 27
+    MultiplicativeExpression  go to state 28
+    ExponentiationExpression  go to state 29
+    UnaryExpression           go to state 30
+    UpdateExpression          go to state 31
+    Literal                   go to state 32
+    NumericLiteral            go to state 33
+
+
+State 1
+
+   35 NumericLiteral: NUMBER .
+
+    $default  reduce using rule 35 (NumericLiteral)
+
+
+State 2
+
+   19 IdentifierName: IDENT .
+
+    $default  reduce using rule 19 (IdentifierName)
+
+
+State 3
+
+    0 $accept: Script . $end
+
+    $end  shift, and go to state 34
+
+
+State 4
+
+    1 Script: ScriptBody .
+
+    $default  reduce using rule 1 (Script)
+
+
+State 5
+
+    2 ScriptBody: StatementList .
+    4 StatementList: StatementList . StatementListItem
+
+    NUMBER  shift, and go to state 1
+    IDENT   shift, and go to state 2
+
+    $default  reduce using rule 2 (ScriptBody)
+
+    StatementListItem         go to state 35
+    Statement                 go to state 7
+    ExpressionStatement       go to state 8
+    Expression                go to state 9
+    AssignmentExpression      go to state 10
+    LeftHandSideExpression    go to state 11
+    NewExpression             go to state 12
+    MemberExpression          go to state 13
+    PrimaryExpression         go to state 14
+    IdentifierReference       go to state 15
+    Identifier                go to state 16
+    IdentifierName            go to state 17
+    ConditionalExpression     go to state 18
+    LogicalORExpression       go to state 19
+    LogicalANDExpression      go to state 20
+    BitwiseORExpression       go to state 21
+    BitwiseXORExpression      go to state 22
+    BitwiseANDExpression      go to state 23
+    EqualityExpression        go to state 24
+    RelationalExpression      go to state 25
+    ShiftExpression           go to state 26
+    AdditiveExpression        go to state 27
+    MultiplicativeExpression  go to state 28
+    ExponentiationExpression  go to state 29
+    UnaryExpression           go to state 30
+    UpdateExpression          go to state 31
+    Literal                   go to state 32
+    NumericLiteral            go to state 33
+
+
+State 6
+
+    3 StatementList: StatementListItem .
+
+    $default  reduce using rule 3 (StatementList)
+
+
+State 7
+
+    5 StatementListItem: Statement .
+
+    $default  reduce using rule 5 (StatementListItem)
+
+
+State 8
+
+    6 Statement: ExpressionStatement .
+
+    $default  reduce using rule 6 (Statement)
+
+
+State 9
+
+    7 ExpressionStatement: Expression . SEMICOLON
+    8                    | Expression .
+
+    SEMICOLON  shift, and go to state 36
+
+    $default  reduce using rule 8 (ExpressionStatement)
+
+
+State 10
+
+    9 Expression: AssignmentExpression .
+
+    $default  reduce using rule 9 (Expression)
+
+
+State 11
+
+   10 AssignmentExpression: LeftHandSideExpression . ASSIGNMENT AssignmentExpression
+   33 UpdateExpression: LeftHandSideExpression .
+
+    ASSIGNMENT  shift, and go to state 37
+
+    $default  reduce using rule 33 (UpdateExpression)
+
+
+State 12
+
+   12 LeftHandSideExpression: NewExpression .
+
+    $default  reduce using rule 12 (LeftHandSideExpression)
+
+
+State 13
+
+   13 NewExpression: MemberExpression .
+
+    $default  reduce using rule 13 (NewExpression)
+
+
+State 14
+
+   14 MemberExpression: PrimaryExpression .
+
+    $default  reduce using rule 14 (MemberExpression)
+
+
+State 15
+
+   15 PrimaryExpression: IdentifierReference .
+
+    $default  reduce using rule 15 (PrimaryExpression)
+
+
+State 16
+
+   17 IdentifierReference: Identifier .
+
+    $default  reduce using rule 17 (IdentifierReference)
+
+
+State 17
+
+   18 Identifier: IdentifierName .
+
+    $default  reduce using rule 18 (Identifier)
+
+
+State 18
+
+   11 AssignmentExpression: ConditionalExpression .
+
+    $default  reduce using rule 11 (AssignmentExpression)
+
+
+State 19
+
+   20 ConditionalExpression: LogicalORExpression .
+
+    $default  reduce using rule 20 (ConditionalExpression)
+
+
+State 20
+
+   21 LogicalORExpression: LogicalANDExpression .
+
+    $default  reduce using rule 21 (LogicalORExpression)
+
+
+State 21
+
+   22 LogicalANDExpression: BitwiseORExpression .
+
+    $default  reduce using rule 22 (LogicalANDExpression)
+
+
+State 22
+
+   23 BitwiseORExpression: BitwiseXORExpression .
+
+    $default  reduce using rule 23 (BitwiseORExpression)
+
+
+State 23
+
+   24 BitwiseXORExpression: BitwiseANDExpression .
+
+    $default  reduce using rule 24 (BitwiseXORExpression)
+
+
+State 24
+
+   25 BitwiseANDExpression: EqualityExpression .
+
+    $default  reduce using rule 25 (BitwiseANDExpression)
+
+
+State 25
+
+   26 EqualityExpression: RelationalExpression .
+
+    $default  reduce using rule 26 (EqualityExpression)
+
+
+State 26
+
+   27 RelationalExpression: ShiftExpression .
+
+    $default  reduce using rule 27 (RelationalExpression)
+
+
+State 27
+
+   28 ShiftExpression: AdditiveExpression .
+
+    $default  reduce using rule 28 (ShiftExpression)
+
+
+State 28
+
+   29 AdditiveExpression: MultiplicativeExpression .
+
+    $default  reduce using rule 29 (AdditiveExpression)
+
+
+State 29
+
+   30 MultiplicativeExpression: ExponentiationExpression .
+
+    $default  reduce using rule 30 (MultiplicativeExpression)
+
+
+State 30
+
+   31 ExponentiationExpression: UnaryExpression .
+
+    $default  reduce using rule 31 (ExponentiationExpression)
+
+
+State 31
+
+   32 UnaryExpression: UpdateExpression .
+
+    $default  reduce using rule 32 (UnaryExpression)
+
+
+State 32
+
+   16 PrimaryExpression: Literal .
+
+    $default  reduce using rule 16 (PrimaryExpression)
+
+
+State 33
+
+   34 Literal: NumericLiteral .
+
+    $default  reduce using rule 34 (Literal)
+
+
+State 34
+
+    0 $accept: Script $end .
+
+    $default  accept
+
+
+State 35
+
+    4 StatementList: StatementList StatementListItem .
+
+    $default  reduce using rule 4 (StatementList)
+
+
+State 36
+
+    7 ExpressionStatement: Expression SEMICOLON .
+
+    $default  reduce using rule 7 (ExpressionStatement)
+
+
+State 37
+
+   10 AssignmentExpression: LeftHandSideExpression ASSIGNMENT . AssignmentExpression
+
+    NUMBER  shift, and go to state 1
+    IDENT   shift, and go to state 2
+
+    AssignmentExpression      go to state 38
+    LeftHandSideExpression    go to state 11
+    NewExpression             go to state 12
+    MemberExpression          go to state 13
+    PrimaryExpression         go to state 14
+    IdentifierReference       go to state 15
+    Identifier                go to state 16
+    IdentifierName            go to state 17
+    ConditionalExpression     go to state 18
+    LogicalORExpression       go to state 19
+    LogicalANDExpression      go to state 20
+    BitwiseORExpression       go to state 21
+    BitwiseXORExpression      go to state 22
+    BitwiseANDExpression      go to state 23
+    EqualityExpression        go to state 24
+    RelationalExpression      go to state 25
+    ShiftExpression           go to state 26
+    AdditiveExpression        go to state 27
+    MultiplicativeExpression  go to state 28
+    ExponentiationExpression  go to state 29
+    UnaryExpression           go to state 30
+    UpdateExpression          go to state 31
+    Literal                   go to state 32
+    NumericLiteral            go to state 33
+
+
+State 38
+
+   10 AssignmentExpression: LeftHandSideExpression ASSIGNMENT AssignmentExpression .
+
+    $default  reduce using rule 10 (AssignmentExpression)

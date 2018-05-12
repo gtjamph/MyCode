@@ -65,18 +65,19 @@
 /* Line 371 of yacc.c  */
 #line 1 "parser.y"
 
-#include "Node.h"
-#include "Statement.h"
-#include "Expression.h"
-#include "Script.h"
+#include <stdio.h>
+#include <Statement.h>
+#include <Expression.h>
+#include <Script.h>
 
-    int yylex();
-    void yyerror(const char*);
+int yylex();
+void yyerror(const char*);
+extern "C" int yywrap();
 
-	ScriptBody *root;
+ScriptBody *root;
 
 /* Line 371 of yacc.c  */
-#line 80 "parser.cpp"
+#line 81 "parser.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -128,19 +129,19 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 387 of yacc.c  */
-#line 13 "parser.y"
+#line 15 "parser.y"
 
-    ScriptBody* scriptBody;
-    Expression* expr;
-    Statement* stmt;
-    vector<Statement*>* stmts;
-    int num;
-    char* name;
+    Expression *expr;
+	Statement *stmt;
+	vector<Statement*> *stmts;
+	ScriptBody *scriptBody;
+	int num;
+	char* name;
 	const char* charArray;
 
 
 /* Line 387 of yacc.c  */
-#line 144 "parser.cpp"
+#line 145 "parser.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -168,7 +169,7 @@ int yyparse ();
 /* Copy the second part of user declarations.  */
 
 /* Line 390 of yacc.c  */
-#line 172 "parser.cpp"
+#line 173 "parser.cpp"
 
 #ifdef short
 # undef short
@@ -1389,7 +1390,7 @@ yyreduce:
     {
       
 /* Line 1792 of yacc.c  */
-#line 1393 "parser.cpp"
+#line 1394 "parser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1622,4 +1623,7 @@ yyreturn:
 
 /* Line 2055 of yacc.c  */
 #line 191 "parser.y"
+
+
+
 

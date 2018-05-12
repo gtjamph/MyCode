@@ -1,0 +1,53 @@
+
+// ==========================================================================
+//  GPLEX error listing for lex source file <Scanner.l>
+// ==========================================================================
+//  Version:  1.2.2
+//  Machine:  SEF-PG-071605
+//  DateTime: 15/04/2016 1:13:06 PM
+//  UserName: kellyw
+// ==========================================================================
+
+
+%{
+int lines = 0;
+%}
+
+%%
+// Error: No namespace has been defined
+// ------------------------------------
+// Error: No namespace has been defined
+// ------------------------------------
+
+[0-9]+		{ yylval.num = int.parse(yytext); return NUMBER; }
+[a-zA-Z]	{ yylval.name = yytext[0];   return IDENT; }
+
+if			{ return IF; }
+else		{ return ELSE; }
+
+int			{ return INT; }
+bool		{ return BOOL; }
+
+"="			{ return '='; }
+"+"			{ return '+'; }
+"<"			{ return '<'; }
+"("			{ return '('; }
+")"			{ return ')'; }
+"{"			{ return '{'; }
+"}"			{ return '}'; }
+";"			{ return ';'; }
+
+[\n]		{ lines++;    }
+[ \t\r]		/* ignore whitespace */ 
+
+.			{ System.Console.Error.WriteLine("Unexpected character '{0}'", yytext); }
+
+%%
+
+void yyerror(string message)
+{
+    System.Console.Error.WriteLine("Error: line {0}, {1}", lines, message);
+}
+
+// ==========================================================================
+

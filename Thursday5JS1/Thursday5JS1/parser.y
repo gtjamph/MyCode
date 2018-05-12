@@ -1,22 +1,24 @@
 %{
-#include "Node.h"
-#include "Statement.h"
-#include "Expression.h"
-#include "Script.h"
+#include <stdio.h>
+#include <Statement.h>
+#include <Expression.h>
+#include <Script.h>
 
-    int yylex();
-    void yyerror(const char*);
+int yylex();
+void yyerror(const char*);
+extern "C" int yywrap();
 
-	ScriptBody *root;
+ScriptBody *root;
 %}
 
-%union {
-    ScriptBody* scriptBody;
-    Expression* expr;
-    Statement* stmt;
-    vector<Statement*>* stmts;
-    int num;
-    char* name;
+%union
+{
+    Expression *expr;
+	Statement *stmt;
+	vector<Statement*> *stmts;
+	ScriptBody *scriptBody;
+	int num;
+	char* name;
 	const char* charArray;
 }
 
@@ -26,19 +28,17 @@
 %token ASSIGNMENT
 %token SEMICOLON
 
-%type <scriptBody> ScriptBody
-%type <stmts> StatementList
-%type <stmt> Statement StatementListItem ExpressionStatement
 %type <expr> Expression NumericLiteral Literal PrimaryExpression MemberExpression NewExpression LeftHandSideExpression 
 	UnaryExpression UpdateExpression MultiplicativeExpression AdditiveExpression ExponentiationExpression ShiftExpression 
 	RelationalExpression EqualityExpression AssignmentExpression ConditionalExpression LogicalANDExpression LogicalORExpression 
 	BitwiseORExpression BitwiseANDExpression BitwiseXORExpression IdentifierReference 
-%type <charArray> Identifier IdentifierName
+%type <stmt> Statement StatementListItem ExpressionStatement
+%type <stmts> StatementList
+%type <scriptBody> ScriptBody
 
 %left '='
 %nonassoc '<'
 %left '+'
-%nonassoc ASSIGNMENT
 
 %%
 
@@ -189,3 +189,6 @@ NumericLiteral: NUMBER
     ;
 
 %%
+
+
+

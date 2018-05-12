@@ -62,14 +62,14 @@ extern int yydebug;
 typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
-#line 13 "parser.y"
+#line 15 "parser.y"
 
-    ScriptBody* scriptBody;
-    Expression* expr;
-    Statement* stmt;
-    vector<Statement*>* stmts;
-    int num;
-    char* name;
+    Expression *expr;
+	Statement *stmt;
+	vector<Statement*> *stmts;
+	ScriptBody *scriptBody;
+	int num;
+	char* name;
 	const char* charArray;
 
 

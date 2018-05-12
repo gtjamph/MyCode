@@ -1,0 +1,9 @@
+﻿  Process "Parser.y" bison file
+  Process "Scanner.l" flex file
+  Scanner.cpp
+  Parser.cpp
+c:\users\n1408364\source\repos\mycode\compilers\nativecompiler\parser.cpp(1102): warning C4065: switch statement contains 'default' but no 'case' labels
+c:\users\n1408364\source\repos\mycode\compilers\nativecompiler\parser.cpp(1388): warning C4065: switch statement contains 'default' but no 'case' labels
+  main.cpp
+  Generating Code...
+  NativeCompiler.vcxproj -> C:\Users\n1408364\source\repos\MyCode\Compilers\NativeCompiler\Debug\NativeCompiler.exe

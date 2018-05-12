@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "parser.h"
+#include "Statement.h"
+#include "Script.h"
+//#include "parser.h"
 
 	//int yylex();
 	//YYSTYPE yylval;

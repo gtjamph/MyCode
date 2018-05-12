@@ -460,14 +460,15 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "scanner.l"
 #line 2 "scanner.l"
-
+#include "Expression.h"
+#include "Statement.h"
+#include "Script.h"
 #include "parser.h"
-#include <stdio.h> 
 
 int lines = 0;
 
-#line 469 "scanner.cpp"
 #line 470 "scanner.cpp"
+#line 471 "scanner.cpp"
 
 #define INITIAL 0
 
@@ -681,11 +682,11 @@ YY_DECL
 		}
 
 	{
-#line 13 "scanner.l"
+#line 14 "scanner.l"
 
-#line 15 "scanner.l"
+#line 16 "scanner.l"
  
-#line 688 "scanner.cpp"
+#line 689 "scanner.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -744,88 +745,88 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "scanner.l"
+#line 17 "scanner.l"
 { return IF; } 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "scanner.l"
+#line 18 "scanner.l"
 { return ELSE; } 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "scanner.l"
+#line 19 "scanner.l"
 { return INT; } 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "scanner.l"
+#line 20 "scanner.l"
 { return BOOL; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 21 "scanner.l"
+#line 22 "scanner.l"
 { yylval.name = _strdup(yytext); return IDENT; } 
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 22 "scanner.l"
+#line 23 "scanner.l"
 { yylval.num = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 24 "scanner.l"
+#line 25 "scanner.l"
 { return '='; } 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 25 "scanner.l"
+#line 26 "scanner.l"
 { return '+'; } 
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 26 "scanner.l"
+#line 27 "scanner.l"
 { return '<'; } 
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 27 "scanner.l"
+#line 28 "scanner.l"
 { return '('; } 
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 28 "scanner.l"
+#line 29 "scanner.l"
 { return ')'; } 
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 29 "scanner.l"
+#line 30 "scanner.l"
 { return '{'; } 
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 30 "scanner.l"
+#line 31 "scanner.l"
 { return '}'; } 
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 31 "scanner.l"
+#line 32 "scanner.l"
 { return ';'; } 
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 33 "scanner.l"
+#line 34 "scanner.l"
 { lines++;    }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 34 "scanner.l"
+#line 35 "scanner.l"
 /* ignore whitespace */
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 36 "scanner.l"
+#line 37 "scanner.l"
 {                                  
 								fprintf(stderr, "invalid character '%c'\n", *yytext);                                 
 								exit(0);                             
@@ -833,10 +834,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 41 "scanner.l"
+#line 42 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 839 "scanner.cpp"
+#line 840 "scanner.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1841,7 +1842,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 41 "scanner.l"
+#line 42 "scanner.l"
 
  
 int yywrap() 

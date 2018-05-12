@@ -1,7 +1,8 @@
 %{ 
-
+#include "Expression.h"
+#include "Statement.h"
+#include "Script.h"
 #include "parser.h"
-#include <stdio.h> 
 
 int lines = 0;
 

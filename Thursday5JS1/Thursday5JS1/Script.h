@@ -5,12 +5,6 @@
 
 using namespace std;
 
-//class Script : public Node
-//{
-//
-//};
-//
-
 class ScriptBody : public Node
 {
 private:

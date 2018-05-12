@@ -1,6 +1,7 @@
 #pragma once
-#include "Node.h"
+//#include "Node.h"
 #include "Expression.h"
+#include "Type.h"
 #include <vector>
 
 using namespace std;
