@@ -185,7 +185,7 @@ UpdateExpression: LeftHandSideExpression											{$$ = $1;}
 Literal: NumericLiteral																{$$ = $1;}				
     ;
 
-NumericLiteral: NUMBER																{$$ = NumericLiteralExpression($1);}				
+NumericLiteral: NUMBER																{$$ = new NumericLiteralExpression($1);}				
     ;
 
 %%

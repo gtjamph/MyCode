@@ -1583,7 +1583,7 @@ yyreduce:
   case 36:
 /* Line 1792 of yacc.c  */
 #line 188 "parser.y"
-    {(yyval.expr) = NumericLiteralExpression((yyvsp[(1) - (1)].num));}
+    {(yyval.expr) = new NumericLiteralExpression((yyvsp[(1) - (1)].num));}
     break;
 
 
