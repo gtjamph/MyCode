@@ -8,13 +8,13 @@ using namespace std;
 class ScriptBody : public Node
 {
 private:
-	vector<StatementListItem*> *stmts;
+	vector<Statement*> *stmts;
 public:
-	ScriptBody(vector<StatementListItem*> *stmts) : stmts(stmts) {};
+	ScriptBody(vector<Statement*> *stmts) : stmts(stmts) {};
 	void dump(int indent)
 	{
 		label(indent, "ScriptBody\n");
-		vector<StatementListItem*>::iterator iter;
+		vector<Statement*>::iterator iter;
 		for (iter = stmts->begin(); iter != stmts->end(); ++iter)
 		{
 			(*iter)->dump(indent + 1);

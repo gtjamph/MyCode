@@ -31,7 +31,7 @@ ScriptBody *root;
 %type <expr> Expression NumericLiteral Literal PrimaryExpression MemberExpression NewExpression LeftHandSideExpression 
 	UnaryExpression UpdateExpression MultiplicativeExpression AdditiveExpression ExponentiationExpression ShiftExpression 
 	RelationalExpression EqualityExpression AssignmentExpression ConditionalExpression LogicalANDExpression LogicalORExpression 
-	BitwiseORExpression BitwiseANDExpression BitwiseXORExpression IdentifierReference 
+	BitwiseORExpression BitwiseANDExpression BitwiseXORExpression IdentifierReference Identifier IdentifierName 
 %type <stmt> Statement StatementListItem ExpressionStatement
 %type <stmts> StatementList
 %type <scriptBody> ScriptBody
@@ -42,21 +42,21 @@ ScriptBody *root;
 
 %%
 
-Script: ScriptBody                              
+Script: ScriptBody																{root = $1;}                              
     ;
 
-ScriptBody: StatementList                       
+ScriptBody: StatementList														{$$ = new ScriptBody($1);}                       
     ;
 
-StatementList: StatementListItem                
-    | StatementList StatementListItem   	
+StatementList: StatementListItem												{$$ = new vector<Statement*>; $$->push_back($1);}                
+    | StatementList StatementListItem											{$$ = $1; $$->push_back($2);}   	
     ;
 
-StatementListItem: Statement			
+StatementListItem: Statement													{$$ = $1;}			
     ;
 /* TO DO | Declaration */
 
-Statement: ExpressionStatement			
+Statement: ExpressionStatement													{$$ = $1;}			
     ;
 /* TO DO
     | BlockStatement      
@@ -75,19 +75,19 @@ Statement: ExpressionStatement
     ;
 */
 
-ExpressionStatement: Expression SEMICOLON  	
-    | Expression          			
-    ;
+ExpressionStatement: Expression SEMICOLON											{$$ = new ExpressionStatement($1);}  	
+				| Expression          			
+				;
 
-Expression: AssignmentExpression												
+Expression: AssignmentExpression													{$$ = $1;}												
     ;
 /* TO DO
     | Expression COMMA AssignmentExpression
     ;
 */
 
-AssignmentExpression: LeftHandSideExpression ASSIGNMENT AssignmentExpression	
-    | ConditionalExpression			
+AssignmentExpression: LeftHandSideExpression ASSIGNMENT AssignmentExpression		{$$ = new AssignmentExpression($1, $3);}	
+    | ConditionalExpression															{$$ = $1;}			
     ;
 /* TO DO
     | LeftHandSideExpression AssignmentOperator AssignmentExpression  
@@ -97,25 +97,25 @@ AssignmentExpression: LeftHandSideExpression ASSIGNMENT AssignmentExpression
 */
 
 /* LHS */
-LeftHandSideExpression: NewExpression		
+LeftHandSideExpression: NewExpression												{$$ = $1;}		
     ;
 /* TO DO
     | CallExpression
     ;
 */
 
-NewExpression: MemberExpression			
+NewExpression: MemberExpression														{$$ = $1;}			
     ;
 /* TO DO
     | NEW NewExpression
     ;
 */
 
-MemberExpression: PrimaryExpression		
+MemberExpression: PrimaryExpression													{$$ = $1;}		
     ;
 
 PrimaryExpression: IdentifierReference			
-    | Literal					
+    | Literal																		{$$ = $1;}					
     ;
 /* TO DO
     | ArrayLiteral 
@@ -129,63 +129,63 @@ PrimaryExpression: IdentifierReference
     ;
 */
 
-IdentifierReference: Identifier			
+IdentifierReference: Identifier														{$$ = $1;}			
     ;
 
-Identifier: IdentifierName 			
+Identifier: IdentifierName															{$$ = $1;} 			
     ;
 
-IdentifierName: IDENT                   	
+IdentifierName: IDENT																{$$ = new IdentifierExpression($1);}                   	
      ;
 
 
 /* RHS */
-ConditionalExpression: LogicalORExpression	
+ConditionalExpression: LogicalORExpression											{$$ = $1;}	
     ;
 
-LogicalORExpression: LogicalANDExpression	
+LogicalORExpression: LogicalANDExpression											{$$ = $1;}	
     ;
 
-LogicalANDExpression: BitwiseORExpression	
+LogicalANDExpression: BitwiseORExpression											{$$ = $1;}	
     ;
 
-BitwiseORExpression: BitwiseXORExpression	
+BitwiseORExpression: BitwiseXORExpression											{$$ = $1;}	
     ;
 
-BitwiseXORExpression: BitwiseANDExpression 	
+BitwiseXORExpression: BitwiseANDExpression											{$$ = $1;} 	
     ;
 
-BitwiseANDExpression: EqualityExpression 	
+BitwiseANDExpression: EqualityExpression											{$$ = $1;} 	
     ;
 
-EqualityExpression: RelationalExpression	
+EqualityExpression: RelationalExpression											{$$ = $1;}	
     ;
 
-RelationalExpression: ShiftExpression		
+RelationalExpression: ShiftExpression												{$$ = $1;}		
     ;
 
-ShiftExpression: AdditiveExpression		
+ShiftExpression: AdditiveExpression													{$$ = $1;}		
     ;
 
-AdditiveExpression: MultiplicativeExpression	
+AdditiveExpression: MultiplicativeExpression										{$$ = $1;}	
     ;
 
-MultiplicativeExpression: ExponentiationExpression  
+MultiplicativeExpression: ExponentiationExpression									{$$ = $1;}  
     ;
 
-ExponentiationExpression: UnaryExpression	
+ExponentiationExpression: UnaryExpression											{$$ = $1;}	
     ;
 
-UnaryExpression: UpdateExpression		
+UnaryExpression: UpdateExpression													{$$ = $1;}		
     ;
 
-UpdateExpression: LeftHandSideExpression	
+UpdateExpression: LeftHandSideExpression											{$$ = $1;}	
     ;
 
-Literal: NumericLiteral				
+Literal: NumericLiteral																{$$ = $1;}				
     ;
 
-NumericLiteral: NUMBER				
+NumericLiteral: NUMBER																{$$ = NumericLiteralExpression($1);}				
     ;
 
 %%

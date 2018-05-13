@@ -7,42 +7,43 @@ class Expression : public Node
 {
 };
 
-class IdentifierName : public Expression
+class IdentifierExpression : public Expression
 {
 private:
 	const char* charName;
 public:
-	IdentifierName(const char* charName) : charName(charName) {};
+	IdentifierExpression(const char* charName) : charName(charName) {};
 	void dump(int indent)
 	{
-		label(indent, "IdentifierName\n");
+		label(indent, "IdentifierExpression: %s\n", charName);
 	}
 };
 
-class NumericLiteral : public Expression
+class NumericLiteralExpression : public Expression
 {
 private:
 	int intNumber;
 public:
-	NumericLiteral(int intNumber) : intNumber(intNumber) {};
+	NumericLiteralExpression(int intNumber) : intNumber(intNumber) {};
 	void dump(int indent)
 	{
-		label(indent, "NumericLiteral\n");
+		label(indent, "NumericLiteralExpression: %d\n", intNumber);
 	}
 };
 
 class AssignmentExpression : public Expression
 {
 private:
-	IdentifierName * lhs;
-	const char *op;
-	NumericLiteral *rhs;
+	Expression *lhs, *rhs;
 public:
-	AssignmentExpression(IdentifierName *lhs, const char *op, NumericLiteral *rhs) : lhs(lhs), op(op), rhs(rhs) {};
-	void dump(int indent)
-	{
+	AssignmentExpression(Expression *lhs, Expression *rhs) {
+		this->lhs = lhs;
+		this->rhs = rhs;
+	};
+
+	void dump(int indent) {
 		label(indent, "AssignmentExpression\n");
-		lhs->dump(indent + 1);
-		rhs->dump(indent + 1);
+		lhs->dump(indent + 1, "lhs");
+		rhs->dump(indent + 1, "rhs");
 	}
 };

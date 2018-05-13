@@ -10,6 +10,23 @@ class Statement : public Node
 {
 };
 
+class ExpressionStatement : public Statement {
+private:
+	Expression * expr;
+
+public:
+	ExpressionStatement(Expression* expr) :
+		expr(expr) {};
+
+
+	void dump(int indent) {
+		label(indent, "ExpressionStatement\n");
+		expr->dump(indent + 1);
+	}
+
+};
+
+
 class StatementListItem : public Statement
 {
 private:

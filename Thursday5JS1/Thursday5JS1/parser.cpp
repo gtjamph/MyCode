@@ -1388,9 +1388,207 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-      
+        case 2:
 /* Line 1792 of yacc.c  */
-#line 1394 "parser.cpp"
+#line 45 "parser.y"
+    {root = (yyvsp[(1) - (1)].scriptBody);}
+    break;
+
+  case 3:
+/* Line 1792 of yacc.c  */
+#line 48 "parser.y"
+    {(yyval.scriptBody) = new ScriptBody((yyvsp[(1) - (1)].stmts));}
+    break;
+
+  case 4:
+/* Line 1792 of yacc.c  */
+#line 51 "parser.y"
+    {(yyval.stmts) = new vector<Statement*>; (yyval.stmts)->push_back((yyvsp[(1) - (1)].stmt));}
+    break;
+
+  case 5:
+/* Line 1792 of yacc.c  */
+#line 52 "parser.y"
+    {(yyval.stmts) = (yyvsp[(1) - (2)].stmts); (yyval.stmts)->push_back((yyvsp[(2) - (2)].stmt));}
+    break;
+
+  case 6:
+/* Line 1792 of yacc.c  */
+#line 55 "parser.y"
+    {(yyval.stmt) = (yyvsp[(1) - (1)].stmt);}
+    break;
+
+  case 7:
+/* Line 1792 of yacc.c  */
+#line 59 "parser.y"
+    {(yyval.stmt) = (yyvsp[(1) - (1)].stmt);}
+    break;
+
+  case 8:
+/* Line 1792 of yacc.c  */
+#line 78 "parser.y"
+    {(yyval.stmt) = new ExpressionStatement((yyvsp[(1) - (2)].expr));}
+    break;
+
+  case 10:
+/* Line 1792 of yacc.c  */
+#line 82 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 11:
+/* Line 1792 of yacc.c  */
+#line 89 "parser.y"
+    {(yyval.expr) = new AssignmentExpression((yyvsp[(1) - (3)].expr), (yyvsp[(3) - (3)].expr));}
+    break;
+
+  case 12:
+/* Line 1792 of yacc.c  */
+#line 90 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 13:
+/* Line 1792 of yacc.c  */
+#line 100 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 14:
+/* Line 1792 of yacc.c  */
+#line 107 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 15:
+/* Line 1792 of yacc.c  */
+#line 114 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 17:
+/* Line 1792 of yacc.c  */
+#line 118 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 18:
+/* Line 1792 of yacc.c  */
+#line 132 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 19:
+/* Line 1792 of yacc.c  */
+#line 135 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 20:
+/* Line 1792 of yacc.c  */
+#line 138 "parser.y"
+    {(yyval.expr) = new IdentifierExpression((yyvsp[(1) - (1)].name));}
+    break;
+
+  case 21:
+/* Line 1792 of yacc.c  */
+#line 143 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 22:
+/* Line 1792 of yacc.c  */
+#line 146 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 23:
+/* Line 1792 of yacc.c  */
+#line 149 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 24:
+/* Line 1792 of yacc.c  */
+#line 152 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 25:
+/* Line 1792 of yacc.c  */
+#line 155 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 26:
+/* Line 1792 of yacc.c  */
+#line 158 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 27:
+/* Line 1792 of yacc.c  */
+#line 161 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 28:
+/* Line 1792 of yacc.c  */
+#line 164 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 29:
+/* Line 1792 of yacc.c  */
+#line 167 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 30:
+/* Line 1792 of yacc.c  */
+#line 170 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 31:
+/* Line 1792 of yacc.c  */
+#line 173 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 32:
+/* Line 1792 of yacc.c  */
+#line 176 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 33:
+/* Line 1792 of yacc.c  */
+#line 179 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 34:
+/* Line 1792 of yacc.c  */
+#line 182 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 35:
+/* Line 1792 of yacc.c  */
+#line 185 "parser.y"
+    {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
+    break;
+
+  case 36:
+/* Line 1792 of yacc.c  */
+#line 188 "parser.y"
+    {(yyval.expr) = NumericLiteralExpression((yyvsp[(1) - (1)].num));}
+    break;
+
+
+/* Line 1792 of yacc.c  */
+#line 1592 "parser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

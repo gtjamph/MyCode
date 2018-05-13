@@ -21,6 +21,9 @@ c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.
   c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\scanner.cpp(83): note: see previous definition of 'UINT32_MAX'
   parser.cpp
 c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1108): warning C4065: switch statement contains 'default' but no 'case' labels
-c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.cpp(1395): warning C4065: switch statement contains 'default' but no 'case' labels
+c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(188): error C2440: '=': cannot convert from 'NumericLiteralExpression' to 'Expression *'
+  c:\users\n1408364\source\repos\mycode\thursday5js1\thursday5js1\parser.y(188): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   Generating Code...
-  Thursday5JS1.vcxproj -> C:\Users\n1408364\source\repos\MyCode\Thursday5JS1\Debug\Thursday5JS1.exe
+  Compiling...
+  main.cpp
+  Generating Code...
